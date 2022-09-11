@@ -23,10 +23,6 @@ export default class Cart {
 	}
 	
 	del(idProduct: number): void {
-		for (let arr of this._items) {
-			if (idProduct === arr.id) {
-				this._items.splice(this._items.indexOf(arr), 1);
-			} 
-		}
+		this._items = this._items.filter((item: Buyable) => item.id !== idProduct);
 	}
 }
